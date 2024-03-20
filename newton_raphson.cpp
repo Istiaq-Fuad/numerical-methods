@@ -8,11 +8,11 @@ const double error = 0.001;
 class NewtonRaphson {
    public:
     double f(double x) {
-        return x * x * x - x * x + 2;
+        return x * x * x - 3 * x + 1;
     }
 
     double d_f(double x) {
-        return 3 * x * x - 2 * x;
+        return 3 * x * x - 3;
     }
 
     double calculate_root(double a) {
@@ -31,7 +31,9 @@ int main() {
     srand(time(0));
     NewtonRaphson newton_raphson;
 
-    double a = rand();
+    double a = 0;
+    // a = 1.5;
+    while (newton_raphson.f(a) >= 0) a = (rand() % (ub - lb + 1)) + lb;
 
     cout << a << '\n';
 

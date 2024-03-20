@@ -4,12 +4,13 @@ using namespace std;
 
 const int lb = -1000;
 const int ub = 1000;
-const double error = 0.01;
+const double error = 0.001;
 
 class Bisection {
    public:
     double f(double x) {
         return x * x * x - x * x + 2;
+        // return x * x - 6 * x + 9;
     }
 
     double calculate_root(double a, double b) {
